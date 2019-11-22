@@ -6,7 +6,7 @@ namespace Marussia\Fields\Actions;
 
 use Marussia\Fields\FieldData;
 use Marussia\Fields\FieldsCollector;
-use Marussia\Fields\Resources\Field;
+use Marussia\Fields\Entities\Field;
 use Marussia\Fields\Exceptions\FieldTypeNotFoundException;
 
 class AbstractAction

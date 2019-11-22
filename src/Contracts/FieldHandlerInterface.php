@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Marussia\Fields\Contracts;
 
-use Marussia\Fields\Resources\Field;
+use Marussia\Fields\Entities\Field;
 use Marussia\Fields\FieldData;
 
 interface FieldHandlerInterface

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Marussia\Fields\Resources;
+namespace Marussia\Fields\Entities;
 
 class Field
 {
@@ -13,9 +13,4 @@ class Field
     public $html = '';
     
     public $errors = [];
-    
-    public function isValid() : bool
-    {
-        return count($this->errors) === 0;
-    }
 }

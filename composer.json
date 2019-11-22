@@ -16,7 +16,8 @@
         "docs": "https://docs.marussia.org/fields/"
     },
     "require": {
-        "php": "^7.2"
+        "php": "^7.2",
+        "marussia/dependency-injection": "~1.0"
     },
     "minimum-stability": "stable",
     "autoload": {
