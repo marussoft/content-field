@@ -11,4 +11,11 @@ class Field
     public $js = '';
     
     public $html = '';
+    
+    public $errors = [];
+    
+    public function isValid() : bool
+    {
+        return count($this->errors) === 0;
+    }
 }
