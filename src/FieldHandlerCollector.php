@@ -7,7 +7,7 @@ namespace Marussia\Fields;
 use Marussia\DependencyInjection\Container;
 use Marussia\Fields\Contracts\FieldHandlerInterface;
 
-class FieldsCollector extends Container
+class FieldHandlerCollector extends Container
 {
     private $fieldsClassMap;
 

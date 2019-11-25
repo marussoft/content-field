@@ -5,29 +5,29 @@ declare(strict_types=1);
 namespace Marussia\Fields\Test;
 
 use PHPUnit\Framework\TestCase;
-use Marussia\Fields\FieldsCollector;
+use Marussia\Fields\FieldHandlerCollector;
 use Marussia\Fields\Contracts\FieldHandlerInterface;
-use Marussia\Fields\Entities\Field;
+use Marussia\Fields\Field;
 use Marussia\Fields\FieldData;
 
-class FieldsCollectorTest extends TestCase
+class FieldHandlerCollectorTest extends TestCase
 {
     public function testExists()
     {
-        $fieldsCollector = $this->fieldsCollector();
+        $fieldsCollector = $this->fieldCollector();
         $this->assertTrue($fieldsCollector->exists('test'));
     }
     
     public function testGet()
     {
-        $fieldsCollector = $this->fieldsCollector();
+        $fieldsCollector = $this->fieldCollector();
         $field = $fieldsCollector->get('test');
         $this->assertInstanceOf(FieldHandlerInterface::class, $field);
     }
 
-    private function fieldsCollector()
+    private function fieldCollector()
     {
-        return new FieldsCollector(['test' => TestField::class]);
+        return new FieldHandlerCollector(['test' => TestField::class]);
     }
 }
 

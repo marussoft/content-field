@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Marussia\Fields\Entities;
+namespace Marussia\Fields;
 
 class Field
 {

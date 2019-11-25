@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Marussia\Fields\Test;
 
 use PHPUnit\Framework\TestCase;
-use Marussia\Fields\FieldsCollector;
+use Marussia\Fields\FieldHandlerCollector;
 use Marussia\Fields\Contracts\FieldHandlerInterface;
-use Marussia\Fields\Entities\Field;
+use Marussia\Fields\Field;
 use Marussia\Fields\FieldData;
 use Marussia\Fields\Actions\GetInputAction;
 
@@ -23,12 +23,12 @@ class GetInputActionTest extends TestCase
 
     private function getInputAction()
     {
-        return new GetInputAction($this->fieldsCollector());
+        return new GetInputAction($this->fieldCollector());
     }
 
-    private function fieldsCollector()
+    private function fieldCollector()
     {
-        return new FieldsCollector(['test' => TestInputField::class]);
+        return new FieldHandlerCollector(['test' => TestInputField::class]);
     }
 }
 

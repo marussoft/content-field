@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Marussia\Fields;
 
-use Marussia\Fields\Entities\Field;
+use Marussia\Fields\Field;
 
 class FieldFactory
 {

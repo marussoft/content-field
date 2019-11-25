@@ -5,26 +5,25 @@ declare(strict_types=1);
 namespace Marussia\Fields\Actions;
 
 use Marussia\Fields\FieldData;
-use Marussia\Fields\FieldsCollector;
-use Marussia\Fields\Entities\Field;
+use Marussia\Fields\FieldHandlerCollector;
+use Marussia\Fields\Field;
 use Marussia\Fields\Exceptions\FieldTypeNotFoundException;
 
 class GetInputWithValueAction
 {
-    private $fieldsCollector;
+    private $fieldCollector;
 
-    public function __construct(FieldsCollector $fieldsCollector)
+    public function __construct(FieldHandlerCollector $fieldCollector)
     {
-        $this->fieldsCollector = $fieldsCollector;
+        $this->fieldCollector = $fieldCollector;
     }
 
     public function execute(FieldData $fieldData) : Field
     {
-        if ($this->fieldsCollector->exists($fieldData->type) === false) {
+        if ($this->fieldCollector->exists($fieldData->type) === false) {
             throw FieldTypeNotFoundException($fieldData->type);
         }
-        $field = $this->fieldsCollector->get($fieldData->type);
-
+        $field = $this->fieldCollector->get($fieldData->type);
         return $field->getInputWithValue($fieldData);
     }
 }
