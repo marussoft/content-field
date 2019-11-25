@@ -16,7 +16,7 @@ class GetInputActionTest extends TestCase
     public function testExecute()
     {
         $editFilledAction = $this->getInputAction();
-        $fieldData = $this->fieldData();
+        $fieldData = \Mockery::mock(FieldData::class);
         $fieldData->type = 'test';
         $this->assertInstanceOf(Field::class, $editFilledAction->execute($fieldData));
     }
@@ -24,11 +24,6 @@ class GetInputActionTest extends TestCase
     private function getInputAction()
     {
         return new GetInputAction($this->fieldsCollector());
-    }
-
-    private function fieldData()
-    {
-        return new FieldData;
     }
 
     private function fieldsCollector()
@@ -56,10 +51,10 @@ class TestInputField implements FieldHandlerInterface
 
     public function getInput(FieldData $fieldData) : Field
     {
-        return new Field;
+        return \Mockery::mock(Field::class);
     }
 
-    public function editFilled(FieldData $fieldData) : Field
+    public function getInputWithValue(FieldData $fieldData) : Field
     {
 
     }

@@ -53,7 +53,7 @@ class TestField implements FieldHandlerInterface
 
     }
     
-    public function editFilled(FieldData $fieldData) : Field
+    public function getInputWithValue(FieldData $fieldData) : Field
     {
 
     }

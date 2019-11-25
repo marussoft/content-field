@@ -25,6 +25,6 @@ class GetInputWithValueAction
         }
         $field = $this->fieldsCollector->get($fieldData->type);
 
-        return $field->editFilled($fieldData);
+        return $field->getInputWithValue($fieldData);
     }
 }

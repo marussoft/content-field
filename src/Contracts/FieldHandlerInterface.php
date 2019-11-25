@@ -17,5 +17,5 @@ interface FieldHandlerInterface
     
     public function getInput(FieldData $fieldData) : Field;
     
-    public function editFilled(FieldData $fieldData) : Field;
+    public function getInputWithValue(FieldData $fieldData) : Field;
 }
