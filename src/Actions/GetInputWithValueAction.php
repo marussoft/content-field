@@ -9,7 +9,7 @@ use Marussia\Fields\FieldsCollector;
 use Marussia\Fields\Entities\Field;
 use Marussia\Fields\Exceptions\FieldTypeNotFoundException;
 
-class EditFilledAction
+class GetInputWithValueAction
 {
     private $fieldsCollector;
 

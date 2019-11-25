@@ -9,9 +9,9 @@ use Marussia\Fields\FieldsCollector;
 use Marussia\Fields\Contracts\FieldHandlerInterface;
 use Marussia\Fields\Entities\Field;
 use Marussia\Fields\FieldData;
-use Marussia\Fields\Actions\EditFilledAction;
+use Marussia\Fields\Actions\GetInputWithValueAction;
 
-class EditFilledActionTest extends TestCase
+class GetInputWithValueActionTest extends TestCase
 {
     public function testExecute()
     {
@@ -23,7 +23,7 @@ class EditFilledActionTest extends TestCase
 
     private function editFilledAction()
     {
-        return new EditFilledAction($this->fieldsCollector());
+        return new GetInputWithValueAction($this->fieldsCollector());
     }
 
     private function fieldData()
@@ -33,11 +33,11 @@ class EditFilledActionTest extends TestCase
 
     private function fieldsCollector()
     {
-        return new FieldsCollector(['test' => TestEditField::class]);
+        return new FieldsCollector(['test' => TestInputWithValueField::class]);
     }
 }
 
-class TestEditField implements FieldHandlerInterface
+class TestInputWithValueField implements FieldHandlerInterface
 {
     public function getStorageValueType() : string
     {
