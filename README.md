@@ -1,3 +1,3 @@
-# fields
+# Marussia content fields
 
-![](https://travis-ci.org/marussoft/fields.svg?branch=master)
+![](https://travis-ci.org/marussoft/content-field.svg?branch=master)
