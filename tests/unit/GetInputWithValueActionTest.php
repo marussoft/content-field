@@ -16,13 +16,13 @@ class GetInputWithValueActionTest extends TestCase
     public function testExecute()
     {
         $fieldCollector = $this->fieldCollector();
-        $editFilledAction = $this->editFilledAction($fieldCollector);
+        $getInputWithValueAction = $this->getInputWithValueAction($fieldCollector);
         $fieldData = \Mockery::mock(FieldData::class);
         $fieldData->type = 'test';
-        $this->assertInstanceOf(Field::class, $editFilledAction->execute($fieldData));
+        $this->assertInstanceOf(Field::class, $getInputWithValueAction->execute($fieldData));
     }
 
-    private function editFilledAction(FieldHandlerCollector $fieldCollector) : GetInputWithValueAction
+    private function getInputWithValueAction(FieldHandlerCollector $fieldCollector) : GetInputWithValueAction
     {
         return new GetInputWithValueAction($fieldCollector);
     }
