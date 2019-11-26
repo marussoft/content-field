@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Marussia\Fields;
+namespace Marussia\ContentField;
 
 class FieldDataFactory
 {
@@ -15,11 +15,11 @@ class FieldDataFactory
         $fieldData->description = $data['description'];
         $fieldData->options     = $data['options'];
         $fieldData->required    = $data['required'];
-        
+
         if (isset($data['value'])) {
             $fieldData->value = $data['value'];
         }
-        
+
         return $fieldData;
     }
 }

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Marussia\Fields\Test;
+namespace Marussia\ContentField\Test;
 
 use PHPUnit\Framework\TestCase;
-use Marussia\Fields\FieldHandlerCollector;
-use Marussia\Fields\Contracts\FieldHandlerInterface;
-use Marussia\Fields\Field;
-use Marussia\Fields\FieldData;
-use Marussia\Fields\Actions\GetInputAction;
+use Marussia\ContentField\FieldHandlerCollector;
+use Marussia\ContentField\Contracts\FieldHandlerInterface;
+use Marussia\ContentField\Field;
+use Marussia\ContentField\FieldData;
+use Marussia\ContentField\Actions\GetInputAction;
 
 class GetInputActionTest extends TestCase
 {
@@ -26,20 +26,20 @@ class GetInputActionTest extends TestCase
     {
         return new GetInputAction($fieldCollector);
     }
-    
+
     private function fieldCollector() : FieldHandlerCollector
     {
         $field = \Mockery::mock(Field::class);
-        
+
         $fieldHandler = \Mockery::mock(FieldHandlerInterface::class);
         $fieldHandler->shouldReceive(['getInput' => $field]);
-        
+
         $fieldCollector = \Mockery::mock(FieldHandlerCollector::class);
         $fieldCollector->shouldReceive([
             'exists' => true,
             'get' => $fieldHandler
         ]);
-    
+
         return $fieldCollector;
     }
 }

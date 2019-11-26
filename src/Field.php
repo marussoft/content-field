@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Marussia\Fields;
+namespace Marussia\ContentField;
 
 class Field
 {
     public $css = '';
-    
+
     public $js = '';
-    
+
     public $html = '';
-    
+
     public $errors = [];
 }

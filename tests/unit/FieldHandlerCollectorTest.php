@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Marussia\Fields\Test;
+namespace Marussia\ContentField\Test;
 
 use PHPUnit\Framework\TestCase;
-use Marussia\Fields\FieldHandlerCollector;
-use Marussia\Fields\Contracts\FieldHandlerInterface;
-use Marussia\Fields\Field;
-use Marussia\Fields\FieldData;
+use Marussia\ContentField\FieldHandlerCollector;
+use Marussia\ContentField\Contracts\FieldHandlerInterface;
+use Marussia\ContentField\Field;
+use Marussia\ContentField\FieldData;
 
 class FieldHandlerCollectorTest extends TestCase
 {
@@ -17,7 +17,7 @@ class FieldHandlerCollectorTest extends TestCase
         $fieldsCollector = $this->fieldCollector();
         $this->assertTrue($fieldsCollector->exists('test'));
     }
-    
+
     public function testGet()
     {
         $fieldCollector = $this->fieldCollector();
@@ -35,24 +35,24 @@ class TestField implements FieldHandlerInterface
 {
     public function getStorageValueType() : string
     {
-    
+
     }
 
     public function getStorageValueSize() : int
     {
-    
+
     }
 
     public function fill(FieldData $fieldData) : Field
     {
 
     }
-    
+
     public function getInput(FieldData $fieldData) : Field
     {
 
     }
-    
+
     public function getInputWithValue(FieldData $fieldData) : Field
     {
 

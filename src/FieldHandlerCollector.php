@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Marussia\Fields;
+namespace Marussia\ContentField;
 
 use Marussia\DependencyInjection\Container;
-use Marussia\Fields\Contracts\FieldHandlerInterface;
+use Marussia\ContentField\Contracts\FieldHandlerInterface;
 
 class FieldHandlerCollector extends Container
 {
@@ -14,10 +14,10 @@ class FieldHandlerCollector extends Container
     public function __construct(array $fieldsClassMap, array $providers = [])
     {
         $this->fieldsClassMap = $fieldsClassMap;
-        
+
         parent::__construct();
     }
-    
+
     public function exists(string $fieldType) : bool
     {
         return array_key_exists($fieldType, $this->fieldsClassMap);

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Marussia\Fields\Exceptions;
+namespace Marussia\ContentField\Exceptions;
 
 class FieldTypeNotFoundException extends \Exception
 {
