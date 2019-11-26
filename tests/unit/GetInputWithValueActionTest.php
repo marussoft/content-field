@@ -15,47 +15,31 @@ class GetInputWithValueActionTest extends TestCase
 {
     public function testExecute()
     {
-        $editFilledAction = $this->editFilledAction();
+        $fieldCollector = $this->fieldCollector();
+        $editFilledAction = $this->editFilledAction($fieldCollector);
         $fieldData = \Mockery::mock(FieldData::class);
         $fieldData->type = 'test';
         $this->assertInstanceOf(Field::class, $editFilledAction->execute($fieldData));
     }
 
-    private function editFilledAction()
+    private function editFilledAction(FieldHandlerCollector $fieldCollector) : GetInputWithValueAction
     {
-        return new GetInputWithValueAction($this->fieldCollector());
+        return new GetInputWithValueAction($fieldCollector);
     }
-
-    private function fieldCollector()
+    
+    private function fieldCollector() : FieldHandlerCollector
     {
-        return new FieldHandlerCollector(['test' => TestInputWithValueField::class]);
-    }
-}
-
-class TestInputWithValueField implements FieldHandlerInterface
-{
-    public function getStorageValueType() : string
-    {
-
-    }
-
-    public function getStorageValueSize() : int
-    {
-
-    }
-
-    public function fill(FieldData $fieldData) : Field
-    {
-
-    }
-
-    public function getInput(FieldData $fieldData) : Field
-    {
-
-    }
-
-    public function getInputWithValue(FieldData $fieldData) : Field
-    {
-        return \Mockery::mock(Field::class);
+        $field = \Mockery::mock(Field::class);
+        
+        $fieldHandler = \Mockery::mock(FieldHandlerInterface::class);
+        $fieldHandler->shouldReceive(['getInputWithValue' => $field]);
+        
+        $fieldCollector = \Mockery::mock(FieldHandlerCollector::class);
+        $fieldCollector->shouldReceive([
+            'exists' => true,
+            'get' => $fieldHandler
+        ]);
+    
+        return $fieldCollector;
     }
 }

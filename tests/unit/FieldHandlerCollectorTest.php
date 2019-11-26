@@ -20,8 +20,8 @@ class FieldHandlerCollectorTest extends TestCase
     
     public function testGet()
     {
-        $fieldsCollector = $this->fieldCollector();
-        $field = $fieldsCollector->get('test');
+        $fieldCollector = $this->fieldCollector();
+        $field = $fieldCollector->get('test');
         $this->assertInstanceOf(FieldHandlerInterface::class, $field);
     }
 
