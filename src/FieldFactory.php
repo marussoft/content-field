@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Marussia\Fields;
+namespace Marussia\ContentField;
 
-use Marussia\Fields\Field;
+use Marussia\ContentField\Field;
 
 class FieldFactory
 {
@@ -14,7 +14,7 @@ class FieldFactory
         $field->js = $data['js'] ?? '';
         $field->css = $data['css'] ?? '';
         $field->html = $data['html'] ?? '';
-        
+
         return $field;
     }
 }

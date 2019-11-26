@@ -1,10 +1,10 @@
 {
-    "name": "marussia/fields",
-    "description": "Marussia fields",
+    "name": "marussia/content-field",
+    "description": "Marussia content fields",
     "type": "library",
     "license": "MIT",
     "keywords": [
-        "fields"
+        "content-field"
     ],
     "authors": [
         {
@@ -13,7 +13,7 @@
         }
     ],
     "support": {
-        "docs": "https://docs.marussia.org/fields/"
+        "docs": "https://docs.marussia.org/content-field/"
     },
     "require": {
         "php": "^7.2",
@@ -22,16 +22,15 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Marussia\\Fields\\": "src/"
+            "Marussia\\ContentField\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Marussia\\Fields\\Test\\": ["tests/"]
+            "Marussia\\ContentField\\Test\\": ["tests/"]
         }
     },
     "require-dev": {
-        "marussia/dependency-injection": "~1.0",
         "phpunit/phpunit": "^8.4",
         "mockery/mockery": "^1.2"
     }

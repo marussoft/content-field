@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Marussia\Fields\Actions;
+namespace Marussia\ContentField\Actions;
 
-use Marussia\Fields\FieldData;
-use Marussia\Fields\FieldHandlerCollector;
-use Marussia\Fields\Field;
-use Marussia\Fields\Exceptions\FieldTypeNotFoundException;
+use Marussia\ContentField\FieldData;
+use Marussia\ContentField\FieldHandlerCollector;
+use Marussia\ContentField\Field;
+use Marussia\ContentField\Exceptions\FieldTypeNotFoundException;
 
 class GetInputAction
 {
