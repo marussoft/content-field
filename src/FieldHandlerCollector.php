@@ -11,7 +11,7 @@ class FieldHandlerCollector extends Container
 {
     private $fieldsClassMap;
 
-    public function __construct(array $fieldsClassMap, array $providers = [])
+    public function __construct(array $fieldsClassMap = [], array $providers = [])
     {
         $this->fieldsClassMap = $fieldsClassMap;
 
