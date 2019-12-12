@@ -10,10 +10,10 @@ class GetFieldDataTypeAction
 {
     private $fieldCollector;
 
-//     public function __construct(FieldHandlerCollector $fieldCollector)
-//     {
-//         $this->fieldCollector = $fieldCollector;
-//     }
+    public function __construct(FieldHandlerCollector $fieldCollector)
+    {
+        $this->fieldCollector = $fieldCollector;
+    }
     
     public function execute(string $fieldType)
     {
