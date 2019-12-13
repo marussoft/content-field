@@ -11,9 +11,10 @@ class FieldFactory
     public function create(array $data) : Field
     {
         $field = new Field();
+        $field->name = $data['name'] ?? '';
         $field->js = $data['js'] ?? '';
         $field->css = $data['css'] ?? '';
-        $field->html = $data['html'] ?? '';
+        $field->value = $data['value'] ?? '';
 
         return $field;
     }

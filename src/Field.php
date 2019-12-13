@@ -6,11 +6,13 @@ namespace Marussia\ContentField;
 
 class Field
 {
+    public $name;
+
     public $css = '';
 
     public $js = '';
 
-    public $html = '';
+    public $value = '';
 
     public $errors = [];
 }
