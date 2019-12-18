@@ -6,12 +6,11 @@ namespace Marussia\ContentField\Contracts;
 
 use Marussia\ContentField\Field;
 use Marussia\ContentField\FieldData;
+use Marussia\ContentField\FieldDataType;
 
 interface FieldHandlerInterface
 {
-    public function getStorageValueType() : string;
-
-    public function getStorageValueSize() : int;
+    public function getDataType() : FieldDataType;
 
     public function fill(FieldData $fieldData) : Field;
 
