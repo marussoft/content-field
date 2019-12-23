@@ -8,9 +8,8 @@ use Marussia\ContentField\FieldFactory;
 use Marussia\ContentField\Field;
 
 class GetFieldWithoutHandler
-
 {
-    pruvate $value = '';
+    private $value = '';
 
     public function __construct(FieldFactory $factory)
     {
@@ -22,7 +21,7 @@ class GetFieldWithoutHandler
         return $this->factory->create(['value' => $this->value]);
     }
 
-    public function value(string $value) : void
+    public function value($value) : self
     {
         $this->value = $value;
         return $this;
